@@ -9,7 +9,7 @@ def scrape_all():
     browser = Browser("chrome", executable_path="chromedriver", headless=True)
     news_title, news_paragraph = mars_news(browser)
 
-       # Run all scraping functions and store results in dictionary
+    # Run all scraping functions and store results in dictionary
     data = {
       "news_title": news_title,
       "news_paragraph": news_paragraph,
@@ -21,7 +21,7 @@ def scrape_all():
 
 # Set the executable path and initialize the chrome browser in splinter
 executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
-browser = Browser('chrome', **executable_path)
+browser = Browser('chrome', **executable_path, headless=False)
 
 def mars_news(browser):
     # Visit the mars nasa news site
