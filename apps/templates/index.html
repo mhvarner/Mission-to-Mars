@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title style="color:darkblue">Mission to Mars</title>
+    <title style="color:blue">Mission to Mars</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -18,7 +18,7 @@
       }
       </style>
   </head>
-  <body>
+  <body style="background-color:orangered">
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
@@ -32,7 +32,7 @@
         <div class="col-md-12">
           <div class="media">
             <div class="media-body">
-              <h2 style="color:cornflowerblue">Latest Mars News</h2>
+              <h2 style="color:blue">Latest Mars News</h2>
               <h4 class="media-heading">{{ mars.news_title }}</h4>
               <p>{{ mars.news_paragraph }}</p>
             </div>
@@ -43,8 +43,11 @@
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
-          <h2 style="color:cornflowerblue">Featured Mars Image</h2>
-          <strong>Mars Fun Fact:</strong>
+          <h2 style="color:blue">Featured Mars Image</h2>
+          <div class="alert alert-info" role="alert">
+            Info Alert!
+          </div>
+          <strong class="bg-info">Mars Fun Fact:</strong>
           <p class="bg-info">Gravity acts much different on Mars than it does on Earth, so if you ever weighed 100 pounds and wanted to weigh 38 pounds, go to Mars!</p>
           <footer>-According to https://astro.umaine.edu/10-crazy-facts-about-mars-11-will-shock-you/</footer>
           <!-- if images is False/None/non-existent, then default to error message -->
@@ -67,7 +70,7 @@
       <!-- Mars Hemispheres -->
           <div class='row' id='mars-hemispheres'>
             <div class='text-center'>
-                <h1 style='color:cornflowerblue'>Mars Hemispheres</h1>
+                <h1 style='color:blue'>Mars Hemispheres</h1>
                 {% for hemisphere in mars.hemispheres %}
                     <h3 class='col-md-3'>{{hemisphere.title}}</h3>
                     {% endfor %}
