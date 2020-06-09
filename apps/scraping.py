@@ -101,7 +101,7 @@ def mars_hemispheres(browser):
     browser.visit(url)
 
     # Creating an empty dictinary in order to put information in
-    hemisphere_final_list = []
+    hemisphere_final = []
 
     # Finding the pictures by tag function
     browser.is_element_present_by_css("thumb", wait_time=1)
@@ -115,29 +115,27 @@ def mars_hemispheres(browser):
 
         # Parse
         html = browser.html
-        hemisphere_soup = BeautifulSoup(html, 'html.parser')
+        hemisphere_beautifulsoup = BeautifulSoup(html, 'html.parser')
 
         # Finding image url
-        img_url_rel = hemisphere_soup.select_one('.wide-image').get('src')
-        hemisphere_title = hemisphere_soup.find('h2', class_='title').get_text()
+        img_url_rel = hemisphere_beautifulsoup.select_one('.wide-image').get('src')
+        hemisphere_title = hemisphere_beautifulsoup.find('h2', class_='title').get_text()
         img_url = f'https://astrogeology.usgs.gov{img_url_rel}'
 
         # Now deliver the info into the new dictionary
         hemisphere_dict = {}
         hemisphere_dict['title'] = hemisphere_title 
         hemisphere_dict['img_url'] = img_url
-        hemisphere_final_list.append(hemisphere_dict)
+        hemisphere_final.append(hemisphere_dict)
 
         browser.back()
 
         browser.is_element_present_by_css("thumb", wait_time=1)
         pictures = browser.find_by_tag('h3')
 
-    # Return the completed list with all 4 hemispheres & titles:
-    return hemisphere_final_list
-
+    # Return the completed list with all 4 hemispheres side by side on website
+    return hemisphere_final
 
 if __name__ == "__main__":
 
-    # If running as script, print scraped data using prettyprint:
     print(scrape_all())

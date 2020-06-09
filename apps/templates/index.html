@@ -44,8 +44,9 @@
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
           <h2 style="color:cornflowerblue">Featured Mars Image</h2>
-          <p style="color:crimson">Random Fact: Mars is an uninhabitable planet at this time, but that does not mean that in the future there cannot be human ecosystem bubbles put on the surface!</p>
-
+          <strong>Mars Fun Fact:</strong>
+          <p class="bg-info">Gravity acts much different on Mars than it does on Earth, so if you ever weighed 100 pounds and wanted to weigh 38 pounds, go to Mars!</p>
+          <footer>-According to https://astro.umaine.edu/10-crazy-facts-about-mars-11-will-shock-you/</footer>
           <!-- if images is False/None/non-existent, then default to error message -->
           <img
             src="{{mars.featured_image | default('static/images/error.png', true) }}"

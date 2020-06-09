@@ -2,6 +2,7 @@
 from flask import Flask, render_template
 from flask_pymongo import PyMongo
 import scraping
+from flask_bootstrap import Bootstrap
 
 # Setting up Flask
 app = Flask(__name__)
