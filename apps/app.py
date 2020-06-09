@@ -2,7 +2,6 @@
 from flask import Flask, render_template
 from flask_pymongo import PyMongo
 import scraping
-from scraping import scrape_all
 
 # Setting up Flask
 app = Flask(__name__)
@@ -16,6 +15,7 @@ mongo = PyMongo(app)
 @app.route("/")
 def index():
     mars = mongo.db.mars.find_one()
+    print(mars)
     return render_template("index.html", mars=mars)
 # Scrape the info
 @app.route("/scrape")
@@ -28,4 +28,3 @@ def scrape():
 # Running Flask
 if __name__ == "__main__":
     app.run()
-

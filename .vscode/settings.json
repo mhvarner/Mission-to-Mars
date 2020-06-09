@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/Users/huntervarner/opt/anaconda3/envs/PythonData/bin/python"
+    "python.pythonPath": "/Users/huntervarner/opt/anaconda3/envs/PythonData/bin/python",
+    "task.slowProviderWarning": false, "python.autoComplete.extraPaths": ["/Users/huntervarner/Desktop/Data_Analysis_Folder/Class/Mission-to-Mars/apps"]
 }

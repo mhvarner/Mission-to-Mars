@@ -4,17 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mission to Mars</title>
+    <title style="color:darkblue">Mission to Mars</title>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     />
+    <style type="text/css">
+      .jumbotron{
+          color: orangered;
+          margin-top: 15px;
+          background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/pia23689.jpg);
+          background-size: cover;
+      }
+      </style>
   </head>
   <body>
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
-        <h1>Mission to Mars</h1>
+        <h1 style="color:cornflowerblue">Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
         <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
@@ -24,7 +32,7 @@
         <div class="col-md-12">
           <div class="media">
             <div class="media-body">
-              <h2>Latest Mars News</h2>
+              <h2 style="color:cornflowerblue">Latest Mars News</h2>
               <h4 class="media-heading">{{ mars.news_title }}</h4>
               <p>{{ mars.news_paragraph }}</p>
             </div>
@@ -35,7 +43,8 @@
       <!-- Section for Featured Image and Facts table -->
       <div class="row" id="mars-featured-image">
         <div class="col-md-8">
-          <h2>Featured Mars Image</h2>
+          <h2 style="color:cornflowerblue">Featured Mars Image</h2>
+          <p style="color:crimson">Random Fact: Mars is an uninhabitable planet at this time, but that does not mean that in the future there cannot be human ecosystem bubbles put on the surface!</p>
 
           <!-- if images is False/None/non-existent, then default to error message -->
           <img
@@ -53,6 +62,19 @@
           </div>
         </div>
       </div>
+    </div>
+      <!-- Mars Hemispheres -->
+          <div class='row' id='mars-hemispheres'>
+            <div class='text-center'>
+                <h1 style='color:cornflowerblue'>Mars Hemispheres</h1>
+                {% for hemisphere in mars.hemispheres %}
+                    <h3 class='col-md-3'>{{hemisphere.title}}</h3>
+                    {% endfor %}
+                    {% for hemisphere in mars.hemispheres %}
+                    <img src="{{hemisphere.img_url}}" class='col-md-3 img-thumbnail'/>
+                    {% endfor %}
+            </div>
+          </div>
     </div>
   </body>
 </html>
