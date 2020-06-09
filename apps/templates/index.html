@@ -22,7 +22,7 @@
     <div class="container">
       <!-- Add Jumbotron to Header -->
       <div class="jumbotron text-center">
-        <h1 style="color:cornflowerblue">Mission to Mars</h1>
+        <h1 style="color:blue">Mission to Mars</h1>
         <!-- Add a button to activate scraping script -->
         <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
       </div>
@@ -61,7 +61,7 @@
         <div class="col-md-4">
           <!-- Mars Facts -->
           <div class="row" id="mars-facts">
-             <h4>Mars Facts</h4>
+             <h4 style="color:blue">Mars Facts</h4>
               {{ mars.facts | safe }}   
           </div>
         </div>
@@ -70,6 +70,13 @@
       <!-- Mars Hemispheres -->
           <div class='row' id='mars-hemispheres'>
             <div class='text-center'>
+              <select class="form-control">
+                <option>>DROPDOWN: Favorite Hemisphere?</option>
+                <option>Cerberus Hemisphere Enhanced</option>
+                <option>Schiaparelli Hemisphere Enhanced</option>
+                <option>Syrtis Major Hemisphere Enhanced</option>
+                <option>Valles Marineris Hemisphere Enhanced</option>
+              </select>
                 <h1 style='color:blue'>Mars Hemispheres</h1>
                 {% for hemisphere in mars.hemispheres %}
                     <h3 class='col-md-3'>{{hemisphere.title}}</h3>
@@ -77,6 +84,7 @@
                     {% for hemisphere in mars.hemispheres %}
                     <img src="{{hemisphere.img_url}}" class='col-md-3 img-thumbnail'/>
                     {% endfor %}
+              <p>Webpage contributions by Michael Hunter Varner</p>
             </div>
           </div>
     </div>
