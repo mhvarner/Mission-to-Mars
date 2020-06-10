@@ -3,4 +3,4 @@ Developing a website scraping data from Nasa's website which includes pictures a
 
 Check out my screenshotted Portfolio: https://github.com/mhvarner/Portfolio
 
-![Screenshot][screencapture1.png]
+![Screenshot](screencapture1.png)
